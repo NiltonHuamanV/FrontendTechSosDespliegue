@@ -1,0 +1,30 @@
+.title-container{
+
+  text-align: center;
+
+  margin-bottom: 40px; /* Increase the margin-bottom to move the title lower */
+
+  margin-top: 60px;  /* Add a margin-top to further position it down the page */
+
+ }
+ .title {
+
+  font-family: 'Poppins', sans-serif;
+
+  font-weight: 600;
+
+  font-size: 2em;
+
+  color: #333;
+ }
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ajusta 250px según sea necesario */
+    gap: 20px; /* Espacio entre tarjetas */
+  }
+
+  .card-grid > mat-card {
+    border: 2px solid #ccc; /* Añade un borde gris claro */
+    border-radius: 5px;     /* Esquinas ligeramente redondeadas (opcional) */
+  }

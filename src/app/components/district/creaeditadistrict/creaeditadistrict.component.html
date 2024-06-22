@@ -1,0 +1,18 @@
+<div class="container" style="text-align: center">
+  <h2>Registro de Distrito</h2>
+    <form [formGroup] = "form" (submit)="aceptar()">
+      <mat-form-field>
+        <mat-label>Distrito</mat-label>
+        <input matInput formControlName="distrito">
+        <mat-error *ngIf="form.get('distrito')?.hasError('required')"
+        >El distrito es obligatorio.</mat-error>  
+      </mat-form-field>
+          <br/>
+        <button mat-raised-button color="primary"> Aceptar</button>
+        <button mat-raised-button color="warn" routerLink="/district">
+          Cancelar
+        </button>
+           
+    </form>
+  </div>
+    

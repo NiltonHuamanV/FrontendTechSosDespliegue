@@ -1,0 +1,39 @@
+.container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .container form {
+    display: inline-block;
+    text-align: left;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    width: 100%;
+    max-width: 600px; /* Ajusta el ancho máximo según sea necesario */
+    margin: 0 auto; /* Centra el formulario horizontalmente */
+  }
+  
+  .container form mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .container form textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+  }
+  
+  .container form button {
+    margin-top: 20px;
+    margin-right: 10px;
+    width: 120px;
+    font-size: 16px;
+  }
+  

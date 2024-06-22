@@ -1,0 +1,66 @@
+<div class="container" *ngIf="verificar()">
+  <div class="title-container">
+    <h1 class="title">Lista de Comentarios a los talleres</h1>
+  </div>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- Codigo Column -->
+    <ng-container matColumnDef="codigo">
+      <th mat-header-cell *matHeaderCellDef>Codigo</th>
+      <td mat-cell *matCellDef="let element"> {{element.idComentario_Cliente_Taller}} </td>
+    </ng-container>
+
+    <!-- Modelo Column -->
+    <ng-container matColumnDef="descripcion">
+      <th mat-header-cell *matHeaderCellDef>Descripción</th>
+      <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="calificacion">
+      <th mat-header-cell *matHeaderCellDef>Calificación</th>
+      <td mat-cell *matCellDef="let element"> {{ element.calificacion }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="fechaComentario">
+      <th mat-header-cell *matHeaderCellDef>Fecha del comentario</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.fechaComentario }}
+      </td>
+      </ng-container>
+
+      <ng-container matColumnDef="taller">
+        <th mat-header-cell *matHeaderCellDef>Taller</th>
+        <td mat-cell *matCellDef="let element"> {{ element.taller.nombre }}
+        </td>
+      </ng-container>
+
+    <ng-container matColumnDef="modificar">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button color="primary" [routerLink]="['ediciones',element.idComentario_Cliente_Taller]"
+        *ngIf="isAdmin() || isCliente()">
+        <mat-icon>border_color</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="eliminar">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button color="warn" (click)="deletes(element.idComentario_Cliente_Taller)"
+        *ngIf="isAdmin() || isCliente()">
+        <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <mat-paginator
+    [pageSizeOptions]="[5, 10, 25, 100]"
+    showFirstLastButtons
+  ></mat-paginator>
+</div>

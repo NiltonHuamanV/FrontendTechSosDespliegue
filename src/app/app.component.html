@@ -1,0 +1,122 @@
+<mat-toolbar color="primary" *ngIf="verificar()">
+  <!--button mat-icon-button routerLink="/" class="techsos-button">
+    <mat-icon aria-hidden="true" aria-label="Example home icon">home</mat-icon>
+    <span class="techsos-text">TechSos</span>
+  </!--button-->
+  <button mat-icon-button [routerLink]="['/homes']" class="techsos-button">
+    <mat-icon aria-hidden="true" aria-label="Example home icon">home</mat-icon>
+    <span class="techsos-text">TechSos</span>
+  </button>
+
+
+  <button mat-button class="district-button" [matMenuTriggerFor]="menuDistrict">
+    <mat-icon>my_location</mat-icon>
+    District</button>
+  <button mat-button class="marca-button" [matMenuTriggerFor]="menuBrand">
+    <mat-icon>phone_iphone</mat-icon>
+    Marca</button>
+  <button mat-button class="reparacion-button" [matMenuTriggerFor]="menuReparacion">
+    <mat-icon>build</mat-icon>
+    Reparacion</button>
+  <button mat-button class="modelo-button" [matMenuTriggerFor]="menuModelo">
+    <mat-icon>phone_android</mat-icon>
+    Modelo</button>
+  <button mat-button class="dispositivo-button" [matMenuTriggerFor]="menuDispositivo">
+    <mat-icon>phonelink_ring</mat-icon>
+    Dispositivo</button>
+  <button mat-button class="taller-button" [matMenuTriggerFor]="menuTaller">
+    <mat-icon>place</mat-icon>
+    Taller</button>
+  <button mat-button class="dispositivo-taller-button" [matMenuTriggerFor]="menuDispositivoTaller">
+    <mat-icon>phonelink_ring</mat-icon>
+    <mat-icon>build</mat-icon>
+    Dispositivo_Taller</button>
+  <button mat-button class="comentario-button" [matMenuTriggerFor]="menuComentario">
+    <mat-icon> comment</mat-icon>
+    Comentario</button>
+  <button mat-button [matMenuTriggerFor]="menuSalir">
+    <mat-icon>person</mat-icon>
+    Usuario</button>
+
+  <button mat-button [matMenuTriggerFor]="menuReport">
+    <mat-icon> file_copy </mat-icon>Reportes
+  </button>
+</mat-toolbar>
+
+<mat-menu #menuDistrict="matMenu">
+  <button mat-menu-item routerLink="/district"><mat-icon> list_alt</mat-icon>Listar</button>
+  <button mat-menu-item routerLink="/district/insertardistrict" *ngIf="isAdmin()">
+    <mat-icon>add_circle_outline</mat-icon>
+    Registrar</button>
+</mat-menu>
+
+<mat-menu #menuBrand="matMenu">
+  <button mat-menu-item routerLink="/marca"><mat-icon> list_alt</mat-icon>Listar</button>
+  <button mat-menu-item routerLink="/marca/insertarmarca" *ngIf="isAdmin()">
+    <mat-icon>add_circle_outline</mat-icon>
+    Registrar</button>
+</mat-menu>
+
+<mat-menu #menuReparacion="matMenu">
+  <button mat-menu-item routerLink="/reparacion"><mat-icon> list_alt</mat-icon>Listar</button>
+  <button mat-menu-item routerLink="/reparacion/insertarreparacion" *ngIf="isAdmin() || isTecnico()">
+    <mat-icon>add_circle_outline</mat-icon>
+    Registrar</button>
+</mat-menu>
+
+<mat-menu #menuModelo="matMenu">
+  <button mat-menu-item routerLink="/modelo"><mat-icon> list_alt</mat-icon>Listar</button>
+  <button mat-menu-item routerLink="/modelo/insertarmodelo" *ngIf="isAdmin()">
+    <mat-icon>add_circle_outline</mat-icon>
+    Registrar</button>
+</mat-menu>
+<mat-menu #menuDispositivo="matMenu">
+  <button mat-menu-item routerLink="/dispositivo"><mat-icon> list_alt</mat-icon>Listar</button>
+  <button mat-menu-item routerLink="/dispositivo/insertardispositivo" *ngIf="isAdmin() || isCliente()">
+    <mat-icon>add_circle_outline</mat-icon>
+    Registrar</button>
+</mat-menu>
+
+<mat-menu #menuTaller="matMenu">
+  <button mat-menu-item routerLink="/taller"><mat-icon> list_alt</mat-icon>Listar</button>
+  <button mat-menu-item routerLink="/taller/insertartaller" *ngIf="isAdmin() || isTecnico()">
+    <mat-icon>add_circle_outline</mat-icon>
+    Registrar</button>
+</mat-menu>
+
+<mat-menu #menuDispositivoTaller="matMenu">
+  <button mat-menu-item routerLink="/dispositivotaller"><mat-icon> list_alt</mat-icon>Listar</button>
+  <button mat-menu-item routerLink="/dispositivotaller/insertardispositivotaller" *ngIf="isAdmin() || isCliente()">
+    <mat-icon>add_circle_outline</mat-icon>
+    Registrar</button>
+</mat-menu>
+
+<mat-menu #menuComentario="matMenu">
+  <button mat-menu-item routerLink="/comentarios"><mat-icon> list_alt</mat-icon>Listar</button>
+  <button mat-menu-item routerLink="/comentarios/insertarcomentario" *ngIf="isAdmin() || isCliente()">
+    <mat-icon>add_circle_outline</mat-icon>
+    Registrar</button>
+</mat-menu>
+
+<mat-menu #menuReport="matMenu">
+  <button mat-menu-item routerLink="/reportes">Reporte01</button>
+  <button mat-menu-item routerLink="/reportes/reporte02">Reporte02</button>
+  <button mat-menu-item routerLink="/reportes/reporte03">Reporte03</button>
+  <button mat-menu-item routerLink="/reportes/reporte04">Reporte04</button>
+  <button mat-menu-item routerLink="/reportes/reporte05">Reporte05</button>
+  <button mat-menu-item routerLink="/reportes/reporte06">Reporte06</button>
+</mat-menu>
+
+<mat-menu #menuSalir="matMenu">
+  <button mat-menu-item routerLink="/login" (click)="cerrar()">
+    <mat-icon>logout</mat-icon>
+    <span>Cerrar sesión</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>verified_user</mat-icon>
+    Rol:
+    <span>{{ role }}</span>
+  </button>
+</mat-menu>
+
+<router-outlet></router-outlet>

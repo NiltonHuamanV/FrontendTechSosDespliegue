@@ -1,0 +1,33 @@
+/* Estilos base */
+.techsos-button {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .techsos-button span {
+    margin-left: 4px;
+  }
+  
+  .techsos-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .district-button {
+    margin-left: 100px; /* Ajusta el margen entre los botones según sea necesario */
+  }
+  
+  /* Media query para pantallas pequeñas */
+/* Media query para pantallas pequeñas */
+@media screen and (max-width: 600px) {
+    .techsos-button {
+      margin-right: auto; /* Mueve el botón TechSos a la izquierda */
+    }
+  
+    .district-button {
+      margin-left: 20px; /* Ajusta el margen entre los botones en pantallas pequeñas */
+    }
+  }
+  
+  

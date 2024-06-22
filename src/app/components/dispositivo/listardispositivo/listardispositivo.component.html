@@ -1,0 +1,50 @@
+<div class="container" *ngIf="verificar()">
+    <div class="title-container">
+      <h1 class="title">Lista de Dispositivos</h1>
+    </div>
+    <table mat-table [dataSource]="datasource" class="mat-elevation-z8">
+          <!-- Codigo Column -->
+          <ng-container matColumnDef="codigo">
+            <th mat-header-cell *matHeaderCellDef>Codigo</th>
+            <td mat-cell *matCellDef="let element"> {{element.idDispositivo}} </td>
+          </ng-container>
+
+        <ng-container matColumnDef="modelo">
+            <th mat-header-cell *matHeaderCellDef>Dispositivo</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.modelo.nombre }}
+            </td>
+          </ng-container>
+      <!-- Modelo Column -->
+      <ng-container matColumnDef="observaciones">
+        <th mat-header-cell *matHeaderCellDef>Observaciones</th>
+        <td mat-cell *matCellDef="let element"> {{element.observaciones}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="modificar">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button color="primary" [routerLink]="['ediciones',element.idDispositivo]"
+          *ngIf="isAdmin() || isCliente()">
+          <mat-icon> border_color</mat-icon>
+          </button> 
+        </td>
+      </ng-container>
+      
+      <ng-container matColumnDef="eliminar">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button color="warn" (click)="deletes(element.idDispositivo)"
+          *ngIf="isAdmin() || isCliente()">
+          <mat-icon>delete</mat-icon>
+          </button> 
+        </td>
+      </ng-container>
+
+    
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+  

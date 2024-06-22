@@ -1,0 +1,17 @@
+<div class="container" style="text-align: center">
+  <h2>Registro de Marca</h2>
+    <form [formGroup] = "form" (submit)="aceptar()">
+      <mat-form-field>
+        <mat-label>Marca</mat-label>
+        <input matInput formControlName="marca">
+        <mat-error *ngIf="form.get('marca')?.hasError('required')"
+        >La marca es obligatoria.</mat-error>
+      </mat-form-field>
+          <br/>
+        <button mat-raised-button color="primary"> Aceptar</button>
+        <button mat-raised-button color="warn" routerLink="/marca">
+          Cancelar
+        </button>
+
+    </form>
+    </div>

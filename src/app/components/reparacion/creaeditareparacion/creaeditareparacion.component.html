@@ -1,0 +1,109 @@
+<div class="container" style="text-align: center">
+  <h2>Registra el dispositivo que llevará a reparación</h2>
+    <form [formGroup] = "form" (submit)="aceptar()">
+
+      <mat-form-field *ngIf="edicion">
+        <mat-label>Código</mat-label>
+        <input matInput formControlName="codigo" readonly>
+      </mat-form-field>
+
+      <br/>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Dispositivo en taller</mat-label>
+        <mat-select formControlName="dispositivotaller">
+          <mat-option *ngFor="let c of listaDispositivos" [value]="c.idDispositivoTaller">
+            {{c.idDispositivoTaller}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="form.get('dispositivotaller')?.hasError('required')"
+        >El dispositivo es obligatorio.</mat-error>
+      </mat-form-field>
+
+    <br/>
+
+    <mat-form-field appearance="fill" class="example-full-width">
+        <input
+          matInput
+          placeholder="Ingrese fecha inicial"
+          [matDatepicker]="picker1"
+          formControlName="fechainicio"
+        />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker1"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+
+        <mat-error *ngIf="form.get('fechainicio')?.hasError('required')"
+          >La fecha es obligatoria.</mat-error
+        >
+      </mat-form-field>
+
+      <br/>
+
+      <mat-form-field appearance="fill" class="example-full-width">
+        <input
+          matInput
+          placeholder="Ingrese fecha final"
+          [matDatepicker]="picker2"
+          formControlName="fechafin"
+        />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker2"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+
+        <mat-error *ngIf="form.get('fechafin')?.hasError('required')"
+          >La fecha es obligatoria.</mat-error
+        >
+      </mat-form-field>
+
+      <br/>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Problema</mat-label>
+        <textarea  matInput placeholder="Problema" formControlName="problema"></textarea>
+        <mat-error *ngIf="form.get('problema')?.hasError('required')"
+        >El problema es obligatorio.</mat-error>
+      </mat-form-field>
+
+      <br />
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Estado</mat-label>
+        <select matNativeControl required formControlName="estado">
+          <option value="en proceso">en proceso</option>
+          <option value="pendiente">pendiente</option>
+          <option value="reparado">reparado</option>
+        </select>
+        <!--textarea  matInput placeholder="Estado" formControlName="estado"></!--textarea-->
+        <mat-error *ngIf="form.get('estado')?.hasError('required')"
+        >El estado es obligatorio.</mat-error>
+      </mat-form-field>
+
+      <br />
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Costo</mat-label>
+        <textarea  matInput placeholder="Costo" formControlName="costo"></textarea>
+        <mat-error *ngIf="form.get('costo')?.hasError('required')"
+        >El costo es obligatorio.</mat-error>
+        <mat-error *ngIf="form.get('Costo')?.hasError('pattern')"
+        >El Costo debe ser un número válido.</mat-error>
+
+      </mat-form-field>
+
+      <br />
+
+
+        <button mat-raised-button color="primary"> Aceptar</button>
+        <button mat-raised-button color="warn" routerLink="/reparacion">
+          Cancelar
+        </button>
+
+    </form>
+</div>

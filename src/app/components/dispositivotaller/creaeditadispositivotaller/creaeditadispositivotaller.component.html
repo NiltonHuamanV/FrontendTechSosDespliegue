@@ -1,0 +1,41 @@
+<div class="container" style="text-align: center">
+  <h2>Registro tu dispositivo al taller que lo arreglará</h2>
+    <form [formGroup] = "form" (submit)="aceptar()">
+      <mat-form-field *ngIf="edicion">
+        <mat-label>Código</mat-label>
+        <input matInput formControlName="codigo" readonly>
+      </mat-form-field>
+      <br/>
+      <mat-form-field class="example-full-width">
+        <mat-label>Dispositivo</mat-label>
+        <mat-select formControlName="dispositivo">
+          <mat-option *ngFor="let c of listaDispositivos" [value]="c.idDispositivo">
+            {{c.idDispositivo}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="form.get('dispositivo')?.hasError('required')"
+        >El dispositivo es obligatorio.</mat-error>       
+      </mat-form-field>
+
+      <br/>
+    
+      <mat-form-field class="example-full-width">
+        <mat-label>Taller</mat-label>
+        <mat-select formControlName="taller">
+          <mat-option *ngFor="let t of listaTalleres" [value]="t.idTaller">
+            {{t.nombre}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="form.get('taller')?.hasError('required')"
+        >El taller es obligatorio.</mat-error>       
+      </mat-form-field>
+      <br />
+        <button mat-raised-button color="primary"> Aceptar</button>
+        <button mat-raised-button color="warn" routerLink="/dispositivotaller">
+          Cancelar
+        </button>
+           
+    </form>
+    </div>
+    
+

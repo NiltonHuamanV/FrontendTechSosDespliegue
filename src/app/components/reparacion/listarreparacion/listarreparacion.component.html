@@ -1,0 +1,84 @@
+<div class="container" *ngIf="verificar()">
+  <div class="title-container">
+    <h1 class="title">Lista de Reparaciones</h1>
+  </div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Position Column -->
+      <ng-container matColumnDef="c1">
+        <th mat-header-cell *matHeaderCellDef>No.</th>
+        <td mat-cell *matCellDef="let element">{{ element.idReparacion }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="c2">
+        <th mat-header-cell *matHeaderCellDef>Dispositivo</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.dispositivoTaller.dispositivo.modelo.nombre }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="c3">
+        <th mat-header-cell *matHeaderCellDef>Fecha Inicio</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.fechaInicio }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="c4">
+        <th mat-header-cell *matHeaderCellDef>Fecha Fin</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.fechaFin }}
+        </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="c5">
+        <th mat-header-cell *matHeaderCellDef>Problema</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.problema }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="c6">
+        <th mat-header-cell *matHeaderCellDef>Estado</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.estado }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="c7">
+        <th mat-header-cell *matHeaderCellDef>Costo</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.costo }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="modificar">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button color="primary" [routerLink]="['ediciones',element.idReparacion]"
+          *ngIf="isAdmin() || isTecnico()">
+          <mat-icon> border_color</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="eliminar">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button color="warn" (click)="deletes(element.idReparacion)"
+          *ngIf="isAdmin() || isTecnico()">
+          <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+    <mat-paginator
+    [pageSizeOptions]="[5, 10, 25, 100]"
+    showFirstLastButtons>
+    </mat-paginator>
+    
+</div>

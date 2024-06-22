@@ -1,0 +1,85 @@
+<div class="container" style="text-align: center">
+  <h2>Registro de Comentario</h2>
+  <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+      <mat-form-field class="example-full-width" *ngIf="edicion" >
+        <mat-label>Codigo</mat-label>
+        <input matInput placeholder="Codigo" formControlName="codigo" readonly/>
+        <mat-error *ngIf="form.get('codigo')?.hasError('required')"
+      >El codigo no se modifica.</mat-error
+    >
+  </mat-form-field>
+
+  <br/>
+
+      <mat-form-field class="example-full-width">
+      <mat-label>Descripción:</mat-label>
+      <textarea  matInput placeholder="descripcion" formControlName="descripcion"></textarea>
+      <mat-error *ngIf="form.get('descripcion')?.hasError('required')"
+      >La descripcion es obligatoria.</mat-error
+      >
+      </mat-form-field>
+
+  <br/>
+
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Calificación:</mat-label>
+      <input matInput placeholder="calificacion" formControlName="calificacion" />
+      <mat-error *ngIf="form.get('calificacion')?.hasError('required')"
+      >La calificación es obligatoria.</mat-error
+    >
+
+    <mat-error *ngIf="form.get('calificacion')?.hasError('min')"
+        >La calificación mínima es 0.</mat-error>
+
+      <mat-error *ngIf="form.get('calificacion')?.hasError('max')"
+        >La calificación máxima es 10 .</mat-error>
+
+      <mat-error *ngIf="form.get('calificacion')?.hasError('pattern')">
+        La calificación debe ser un número válido.</mat-error>
+
+    </mat-form-field>
+
+  <br/>
+
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Taller</mat-label>
+    <mat-select formControlName="taller">
+      <mat-option *ngFor="let c of listaTalleres" [value]="c.idTaller">
+        {{c.nombre}}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="form.get('taller')?.hasError('required')"
+    >La marca es obligatoria.</mat-error>
+  </mat-form-field>
+
+
+    <br />
+    <mat-form-field appearance="fill" class="example-full-width">
+      <input
+        matInput
+        placeholder="Ingrese fecha"
+        [matDatepicker]="picker"
+        formControlName="fechaComentario"
+      />
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+
+      <mat-error *ngIf="form.get('fechaComentario')?.hasError('required')"
+        >La fecha es obligatoria.</mat-error
+      >
+    </mat-form-field>
+    <br />
+
+    <button mat-raised-button color="primary">Aceptar</button>
+    <button mat-raised-button color="warn" routerLink="/comentarios">
+      Cancelar
+    </button>
+    <p>{{ mensaje }}</p>
+  </form>
+</div>
