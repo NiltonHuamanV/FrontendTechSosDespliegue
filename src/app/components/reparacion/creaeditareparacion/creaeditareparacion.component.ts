@@ -98,12 +98,7 @@ export class CreaeditareparacionComponent implements OnInit{
         });
       });
       }
-      /*this.rS.insert(this.reparation).subscribe((data)=>{
-        this.rS.list().subscribe((data)=>{
-          this.rS.setList(data)
-        })
-      });*/
-
+   
       this.router.navigate(['reparacion'])
     }
   }

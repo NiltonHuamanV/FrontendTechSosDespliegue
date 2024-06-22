@@ -17,39 +17,16 @@ export class Report03Component implements OnInit{
   };
 
   barChartLabels: string[] = [];
-  //barChartType: ChartType = 'pie';
-  //barChartType: ChartType = 'doughnut';
-  //barChartType: ChartType = 'line';
   barChartType: ChartType = 'bar';
-  //barChartType: ChartType = 'polarArea';
   barChartLegend = true;
   barChartData: ChartDataset[] = [];
 
   constructor(private dS:DispositivoService) {}
 
-  /*ngOnInit(): void {
-    this.dS.getQuantityReport03().subscribe(data => {
-      this.barChartLabels = data.map(item => item.nombreTaller)
-      this.barChartData = [
-        {
-          data:data.map(item => item.cantidadDispositivos),
-          label:'cantidad de dispositivos',
-          backgroundColor:[
-            '#8064A2',
-            '#4BACC6',
-            '#4F81BC',
-          ],
-          borderColor:'rgba(173, 216, 230, 1)',
-          borderWidth: 1,
-        }
-      ]
-    })
-  }*/
-
     ngOnInit(): void {
       this.dS.getQuantityReport03().subscribe(data => {
-        const talleres = Array.from(new Set(data.map(item => item.nombreTaller))); // talleres
-        const estados = Array.from(new Set(data.map(item => item.estado))); // estados
+        const talleres = Array.from(new Set(data.map(item => item.nombreTaller))); 
+        const estados = Array.from(new Set(data.map(item => item.estado))); 
   
         this.barChartLabels = talleres; 
   
@@ -59,7 +36,7 @@ export class Report03Component implements OnInit{
             return dato ? dato.cantidadDispositivos : 0;
           }),
           label: estado,
-          backgroundColor: this.getColorForEstado(estado), // color según el estado
+          backgroundColor: this.getColorForEstado(estado), 
           borderWidth: 1
         }));
       });
@@ -74,7 +51,7 @@ export class Report03Component implements OnInit{
         case 'pendiente':
           return '#4F81BC';
         default:
-          return '#CCCCCC'; // Color por defecto
+          return '#CCCCCC';
       }
     }
 

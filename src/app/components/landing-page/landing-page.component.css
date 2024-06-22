@@ -1,355 +1,3 @@
-/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-
-/* Document
-   ========================================================================== */
-
-/**
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
- */
-
- html {
-  line-height: 1.15; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
-}
-
-/* Sections
-   ========================================================================== */
-
-/**
- * Remove the margin in all browsers.
- */
-
-body {
-  margin: 0;
-}
-
-/**
- * Render the `main` element consistently in IE.
- */
-
-main {
-  display: block;
-}
-
-/**
- * Correct the font size and margin on `h1` elements within `section` and
- * `article` contexts in Chrome, Firefox, and Safari.
- */
-
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
-/* Grouping content
-   ========================================================================== */
-
-/**
- * 1. Add the correct box sizing in Firefox.
- * 2. Show the overflow in Edge and IE.
- */
-
-hr {
-  box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
-}
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-
-pre {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
-}
-
-/* Text-level semantics
-   ========================================================================== */
-
-/**
- * Remove the gray background on active links in IE 10.
- */
-
-a {
-  background-color: transparent;
-}
-
-/**
- * 1. Remove the bottom border in Chrome 57-
- * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
- */
-
-abbr[title] {
-  border-bottom: none; /* 1 */
-  text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
-}
-
-/**
- * Add the correct font weight in Chrome, Edge, and Safari.
- */
-
-b,
-strong {
-  font-weight: bolder;
-}
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-
-code,
-kbd,
-samp {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
-}
-
-/**
- * Add the correct font size in all browsers.
- */
-
-small {
-  font-size: 80%;
-}
-
-/**
- * Prevent `sub` and `sup` elements from affecting the line height in
- * all browsers.
- */
-
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-sup {
-  top: -0.5em;
-}
-
-/* Embedded content
-   ========================================================================== */
-
-/**
- * Remove the border on images inside links in IE 10.
- */
-
-img {
-  border-style: none;
-}
-
-/* Forms
-   ========================================================================== */
-
-/**
- * 1. Change the font styles in all browsers.
- * 2. Remove the margin in Firefox and Safari.
- */
-
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: inherit; /* 1 */
-  font-size: 100%; /* 1 */
-  line-height: 1.15; /* 1 */
-  margin: 0; /* 2 */
-}
-
-/**
- * Show the overflow in IE.
- * 1. Show the overflow in Edge.
- */
-
-button,
-input { /* 1 */
-  overflow: visible;
-}
-
-/**
- * Remove the inheritance of text transform in Edge, Firefox, and IE.
- * 1. Remove the inheritance of text transform in Firefox.
- */
-
-button,
-select { /* 1 */
-  text-transform: none;
-}
-
-/**
- * Correct the inability to style clickable types in iOS and Safari.
- */
-
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
-}
-
-/**
- * Remove the inner border and padding in Firefox.
- */
-
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-/**
- * Restore the focus styles unset by the previous rule.
- */
-
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
-
-/**
- * Correct the padding in Firefox.
- */
-
-fieldset {
-  padding: 0.35em 0.75em 0.625em;
-}
-
-/**
- * 1. Correct the text wrapping in Edge and IE.
- * 2. Correct the color inheritance from `fieldset` elements in IE.
- * 3. Remove the padding so developers are not caught out when they zero out
- *    `fieldset` elements in all browsers.
- */
-
-legend {
-  box-sizing: border-box; /* 1 */
-  color: inherit; /* 2 */
-  display: table; /* 1 */
-  max-width: 100%; /* 1 */
-  padding: 0; /* 3 */
-  white-space: normal; /* 1 */
-}
-
-/**
- * Add the correct vertical alignment in Chrome, Firefox, and Opera.
- */
-
-progress {
-  vertical-align: baseline;
-}
-
-/**
- * Remove the default vertical scrollbar in IE 10+.
- */
-
-textarea {
-  overflow: auto;
-}
-
-/**
- * 1. Add the correct box sizing in IE 10.
- * 2. Remove the padding in IE 10.
- */
-
-[type="checkbox"],
-[type="radio"] {
-  box-sizing: border-box; /* 1 */
-  padding: 0; /* 2 */
-}
-
-/**
- * Correct the cursor style of increment and decrement buttons in Chrome.
- */
-
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
-
-/**
- * 1. Correct the odd appearance in Chrome and Safari.
- * 2. Correct the outline style in Safari.
- */
-
-[type="search"] {
-  -webkit-appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
-}
-
-/**
- * Remove the inner padding in Chrome and Safari on macOS.
- */
-
-[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-/**
- * 1. Correct the inability to style clickable types in iOS and Safari.
- * 2. Change font properties to `inherit` in Safari.
- */
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
-  font: inherit; /* 2 */
-}
-
-/* Interactive
-   ========================================================================== */
-
-/*
- * Add the correct display in Edge, IE 10+, and Firefox.
- */
-
-details {
-  display: block;
-}
-
-/*
- * Add the correct display in all browsers.
- */
-
-summary {
-  display: list-item;
-}
-
-/* Misc
-   ========================================================================== */
-
-/**
- * Add the correct display in IE 10+.
- */
-
-template {
-  display: none;
-}
-
-/**
- * Add the correct display in IE 10.
- */
-
-[hidden] {
-  display: none;
-}
-
-/*VERSION MOBILES*/
-
 *{
   box-sizing: border-box;
 }
@@ -428,7 +76,6 @@ header .logo{
 }
 
 
-/*Para centrar toda la barra de navegación*/
 header .container{
   display: flex;
   flex-direction: column;
@@ -502,9 +149,6 @@ header{
 }
 
 
-
-
-/*Estilos para el Switch*/
 .switch {
   position: relative;
   display: inline-block;
@@ -568,9 +212,6 @@ input:checked + .slider:before {
 }
 
 
-
-
-/*Estilo para botón del DarkMode*/
 #dark-mode-button {
   display: flex;
   align-items: center;
@@ -588,7 +229,6 @@ input:checked + .slider:before {
   padding-bottom: 25px;
 }
 
-/*Beneficios*/
 #beneficios-techsos{
   background-color: rgb(255, 255, 255);
   color: rgb(255, 255, 255);
@@ -600,7 +240,6 @@ input:checked + .slider:before {
 }
 
 #beneficios-techsos .container{
- /*padding: 150px 12px;*/
   padding: 200px 0 12px 12px
 }
 
@@ -625,9 +264,7 @@ input:checked + .slider:before {
   border-radius: 15px;
 }
 
-/*Selecciona la primer "carta" de las 3 creadas*/
 .carta:first-child {
-  /*Aplicando el gradiente - Overlay*/
   background-image: linear-gradient(
       0deg,
       rgba(0,0,0,0.7),
@@ -635,7 +272,6 @@ input:checked + .slider:before {
   ), url('assets/images/benefit-seguro-crop.png');
 }
 
-/*Selecciona la segunda "carta" de las 3 creadas*/
 .carta:nth-child(2) {
   background-image: linear-gradient(
       0deg,
@@ -644,8 +280,6 @@ input:checked + .slider:before {
   ), url("assets/images/benefit-map-crop.png");
 }   
 
-/*Selecciona la segunda "carta" de las 3 creadas
-.carta:nth-child(3) --> da el mismo resultado*/
 .carta:last-child {
   background-image: linear-gradient(
       0deg,
@@ -666,13 +300,12 @@ input:checked + .slider:before {
 }
 
 .beneficios li::before {
-  content: "\2714"; /* Código del emoji de checkmark */
-  color: rgb(137, 255, 137); /* Color del emoji */
-  margin-right: 5px; /* Espacio entre el emoji y el texto */
+  content: "\2714"; 
+  color: rgb(137, 255, 137); 
+  margin-right: 5px; 
 }
 
 
-/*Precios*/
 #precios-techsos{
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
@@ -692,7 +325,6 @@ input:checked + .slider:before {
 
 #precios-techsos  p {
   
-  /*display: none;*/
   padding-bottom: 40px; 
 }
 
@@ -772,7 +404,6 @@ input:checked + .slider:before {
   background-color: rgba(109, 176, 227, 0.654);
 }
 
-/*Personalización de título de los precios*/
 .precios .carta2:first-child h3{
   color: rgba(0, 199, 70, 0.878);
 }
@@ -786,7 +417,6 @@ input:checked + .slider:before {
 }
 
 
-/*Personalización de botones*/
 .precios .carta2:first-child button:hover{
   font-size: 1.50em;
   background-color: rgba(0, 255, 89, 0.495);
@@ -804,7 +434,6 @@ input:checked + .slider:before {
 }
 
 
-/*Personalización de bordes*/
 .carta2:first-child:hover {
   border: 3px solid rgba(54, 224, 114, 0.495);
 }
@@ -817,7 +446,6 @@ input:checked + .slider:before {
   border: 3px solid rgba(124, 185, 231, 0.654);
 }
 
-/*Acerca De*/
 #acerca-techsos .container{
   text-align: center;
   padding: 200px 0 12px 12px
@@ -852,23 +480,17 @@ input:checked + .slider:before {
 }
 
 #acerca-techsos .logos .play-store:hover{
-  opacity: 0.8; /* Reducir la opacidad al 80% */
-  transform: scale(1.1); /* Aumentar la escala al 110% */
+  opacity: 0.8; 
+  transform: scale(1.1); 
 }
 
 #acerca-techsos .logos .app-store:hover{
-  opacity: 0.8; /* Reducir la opacidad al 80% */
-  transform: scale(1.1); /* Aumentar la escala al 110% */
+  opacity: 0.8; 
+  transform: scale(1.1); 
 }
 
 
 
-
-
-
-
-
-/*Testimonios*/
 
 #testimonios-techsos {
   background-color: rgb(255, 255, 255);
@@ -894,7 +516,6 @@ input:checked + .slider:before {
   border-radius: 10px;
   background-color: rgba(38, 38, 38, 0.838);
 
-  /*Transición*/
   transition: transform 0.3s ease;
 }
 
@@ -943,8 +564,6 @@ input:checked + .slider:before {
 }
 
 
-
-/*Contacto*/
 #contacto-techsos .container {
   text-align: center;
   padding: 200px 0 12px 12px
@@ -975,9 +594,6 @@ label{
 
 #contacto-techsos .image-container {
   display: none;
-  /*
-  max-width: 100%;
-  height: auto;*/
 }
 
 .formulario-techsos .form-container {
@@ -1012,7 +628,7 @@ label{
 .form h1 {
   text-align: center;
   margin-bottom: 20px;
-  color: #489af8; /* Color del título del formulario */
+  color: #489af8;
 }
 
 .form-label {
@@ -1034,7 +650,7 @@ label{
 .form-input:focus,
 .form-textarea:focus {
   outline: none;
-  border-color: #1968d6; /* Color del borde al enfocar el campo de entrada */
+  border-color: #1968d6; 
 }
 
 .btn-submit {
@@ -1075,7 +691,7 @@ label{
   padding: 30px;
   border-radius: 10px;
 }
-/*Sobre Nosotros*/
+
 #nosotros-techsos .container {
   text-align: center;
   padding: 200px 12px; 
@@ -1084,7 +700,7 @@ label{
 #nosotros-techsos h2 {
   margin-top: 0;
   font-size: 2.2em;
-  color: #000000; /* Color del título */
+  color: #000000; 
 }
 
 #nosotros-techsos  iframe{
@@ -1101,7 +717,6 @@ label{
 
 
 
-/*Footer*/
 #footer-techsos {
   background-color: rgba(41, 81, 155, 0.767);
   text-align: center;
@@ -1115,7 +730,7 @@ label{
 }
 
 .logo-image-footer {
-  width: 150px; /* Ajusta el tamaño del logo según tus preferencias */
+  width: 150px; 
 }
 
 .column2,
@@ -1190,21 +805,10 @@ label{
 }
 
 
-
-
-
-
-
-
-/*VERSION Desktop*/
-/*Cuando el ancho de la pantalla supere los 720px 
-se aplicarán los siguientes cambios.*/
-
 @media (min-width: 720px) {
 
   header{
-    /*para que al navegar se mantenga 
-    la barra de navegación quieta*/
+
     position: fixed;
     width: 100%;
   }
@@ -1221,7 +825,7 @@ se aplicarán los siguientes cambios.*/
   }
 
   header nav a {
-    font-size: 20px; /* Ajusta el tamaño de fuente según tus preferencias */
+    font-size: 20px; 
   }
 
   .spain{
@@ -1230,13 +834,13 @@ se aplicarán los siguientes cambios.*/
   }
 
   .switch {
-    margin-left: 1px; /* Ajusta el margen izquierdo según tu preferencia */
-    margin-right: 2px; /* Ajusta el margen izquierdo según tu preferencia */
+    margin-left: 1px; 
+    margin-right: 2px; 
     margin-top: 5px;
   }
 
   #hero {
-    height: 115vh; /*para que se vea mejor la imagen*/
+    height: 115vh; 
   }
 
   #hero h1{
@@ -1244,9 +848,6 @@ se aplicarán los siguientes cambios.*/
   }
 
 
-
-
-   /*Beneficios*/
   #beneficios-techsos .beneficios {
     display: flex;
     justify-content: center;
@@ -1269,7 +870,7 @@ se aplicarán los siguientes cambios.*/
     padding: 80px;
     height: 300px;
     background-repeat: no-repeat;
-    background-position: center; /* Centra las imágenes verticalmente */
+    background-position: center; 
     background-color: rgba(255, 255, 255, 0.5);
     display: flex;
     flex-direction: column;
@@ -1299,10 +900,6 @@ se aplicarán los siguientes cambios.*/
     margin-bottom: 10px;
   }
 
-
-
-
-  /*Precios*/
   #precios-techsos .precios {
     display: flex;
     justify-content: center;
@@ -1324,7 +921,7 @@ se aplicarán los siguientes cambios.*/
   }
 
   #precios-techsos .carta2:hover {
-    transform: scale(1.05); /* Ejemplo de animación al hacer hover */
+    transform: scale(1.05); 
   }
 
   #precios-techsos .carta2:first-child:hover {
@@ -1349,7 +946,7 @@ se aplicarán los siguientes cambios.*/
   }
   
   #precios-techsos .carta2 button {
-    margin-top: auto; /* Alinea el botón al final de la carta */
+    margin-top: auto; 
   }
 
 
@@ -1357,8 +954,6 @@ se aplicarán los siguientes cambios.*/
   margin-top: 10px;
 }
 
-
- /*Acerca de*/
   #acerca-techsos .container {
     display: flex;
     flex-wrap: wrap;
@@ -1403,7 +998,7 @@ se aplicarán los siguientes cambios.*/
     grid-template-columns: repeat(2, auto);
     justify-content: center;
     align-items: center;
-    gap: 15px; /* Espacio entre los logos */
+    gap: 15px;
   }
   
   #acerca-techsos .logos img {
@@ -1447,9 +1042,6 @@ se aplicarán los siguientes cambios.*/
     }
   }
 
-
-
-  /* Testimonios */
   #testimonios-techsos .container {
     display: flex;
     flex-direction: column;
@@ -1465,7 +1057,7 @@ se aplicarán los siguientes cambios.*/
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px; /* Espacio entre las cartas de testimonio */
+    gap: 20px;
   }
 
   #testimonios-techsos .carta3 {
@@ -1500,46 +1092,36 @@ se aplicarán los siguientes cambios.*/
   }
 
 
-
-
-
-  /* Contacto */
   #contacto-techsos .formulario-techsos {
-    justify-content: space-between; /* Alinear el formulario y la imagen en los extremos */
+    justify-content: space-between; 
   }
   
   #contacto-techsos .image-container {
-    flex: 1; /* Ocupar la mitad del ancho disponible */
-    display: flex; /* Mostrar la imagen */
-    justify-content: flex-end; /* Alinear la imagen a la derecha */
+    flex: 1; 
+    display: flex; 
+    justify-content: flex-end;
   }
   
   #contacto-techsos .form-container {
-    flex: 1; /* Ocupar la otra mitad del ancho disponible */
-    padding-right: 50px; /* Espacio derecho para separar el formulario de la imagen */
+    flex: 1; 
+    padding-right: 50px; 
   }
 
   #contacto-techsos .image-container img {
-    max-width: 100%; /* Ajusta el ancho máximo de la imagen al tamaño del contenedor */
-    height: auto; /* Mantiene la proporción de aspecto original de la imagen */
+    max-width: 100%; 
+    height: auto; 
   }
   
   #contacto-techsos p{
     padding-bottom: 10px;
   }
 
-
-
-  /* Nosotros */
   #nosotros-techsos  iframe{
     padding: 0 20px;
     width: 70%;
     height: 60vh;
   }
    
-
-
-  /* Footer */
   .container-body {
     flex-direction: row;
   }

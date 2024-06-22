@@ -87,12 +87,6 @@ export class CreaeditadispositivotallerComponent implements OnInit{
           this.dtS.setList(data);
         });
       });
-
-      /*this.dtS.insert(this.devicetaller).subscribe((data) => {
-        this.dtS.list().subscribe((data) => {
-          this.dtS.setList(data);
-        });
-      });*/
       }
       this.router.navigate(['dispositivotaller']);
     

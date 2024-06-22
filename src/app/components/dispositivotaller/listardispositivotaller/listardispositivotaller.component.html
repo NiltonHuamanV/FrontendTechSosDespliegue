@@ -3,7 +3,6 @@
       <h1 class="title">Lista de Dispositivos asociados a un taller</h1>
     </div>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-          <!-- Codigo Column -->
           <ng-container matColumnDef="codigo">
             <th mat-header-cell *matHeaderCellDef>Codigo</th>
             <td mat-cell *matCellDef="let element"> {{element.idDispositivoTaller}} </td>
@@ -15,8 +14,6 @@
               {{ element.dispositivo.modelo.nombre }}
             </td>
           </ng-container>
-  
-      <!--  Column -->
       <ng-container matColumnDef="taller">
         <th mat-header-cell *matHeaderCellDef>Taller</th>
         <td mat-cell *matCellDef="let element"> {{element.taller.nombre}} </td>

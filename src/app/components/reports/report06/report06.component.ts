@@ -18,15 +18,8 @@ export class Report06Component implements OnInit {
     
     barChartLabels: string[] = [];
 
-  //barChartType: ChartType = 'pie';
- 
-  //barChartType: ChartType = 'doughnut';
- 
   barChartType: ChartType = 'line';
  
-  //barChartType: ChartType = 'bar';
- 
-  //barChartType: ChartType = 'polarArea';
   barChartLegend = true;
   barChartData: ChartDataset[] = [];
  

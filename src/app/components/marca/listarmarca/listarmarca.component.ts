@@ -58,7 +58,6 @@ export class ListarmarcaComponent implements OnInit{
     });
   }
 
-  //esto
   cargarMarcas(): void {
     this.mS.list().subscribe((marcas: Marca[]) => {
       this.marcas = marcas;
@@ -74,7 +73,7 @@ export class ListarmarcaComponent implements OnInit{
     },
     (error) => {
       this.snackbar.open('No fue posible eliminar el registro, ya se encuentra registrado en otro lado', 'Cerrar', {
-        duration: 3000 // Duración del mensaje en milisegundos
+        duration: 3000 
       });
     }
   );
@@ -92,21 +91,6 @@ export class ListarmarcaComponent implements OnInit{
   isCliente() {
     return this.role === 'CLIENTE';
   }
-
-
- /* deletes(id: number): void {
-    this.mS.delete(id).subscribe((data) => {
-        this.mS.list().subscribe((data)=>{
-          this.mS.setList(data)
-        });
-      },
-      (error) => {
-        this.snackBar.open('No fue posible eliminar el registro, ya se encuentra registrado en otro lado', 'Cerrar', {
-          duration: 3000 // Duración del mensaje en milisegundos
-        });
-      }
-    );
-  }*/
 
 
 }

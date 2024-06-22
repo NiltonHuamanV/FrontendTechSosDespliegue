@@ -21,25 +21,10 @@ import { NgIf } from '@angular/common';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent /*implements OnInit, DoCheck*/{
+export class AppComponent{
   title = 'techsos';
 
   role: string = '';
-
-  /*-----------*/
-  /*ngOnInit() {
-    this.verificar(); // Verificar si el usuario está autenticado
-    this.role = this.loginService.showRole(); // Obtener y actualizar el rol
-  }*/
-  /*------------*/
-  /*ngDoCheck() {
-    const nuevoRol = this.loginService.showRole(); 
-    if (nuevoRol !== this.role) {
-      this.role = nuevoRol;
-    }
-  }*/
-
-  
 
   constructor(private loginService: LoginService) {
   }

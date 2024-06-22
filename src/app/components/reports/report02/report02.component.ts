@@ -18,10 +18,10 @@ export class Report02Component implements OnInit {
     responsive: true,
     scales: {
       x: {
-        stacked: true // Para agrupar las barras por taller
+        stacked: true
       },
       y: {
-        stacked: false // Para no apilar las barras en el eje Y
+        stacked: false 
       }
     },
     plugins: {
@@ -52,14 +52,13 @@ export class Report02Component implements OnInit {
       const talleres = Array.from(new Set(data.map(item => item.nombre_taller)));
       const comentarios = Array.from(new Set(data.map(item => item.descripcion)));
 
-      // Combinar comentarios y calificaciones en etiquetas únicas
       this.barChartLabels = data.map(item => `${item.descripcion} - ${item.promediocalificacion}`);
 
       this.barChartData = talleres.map(taller => ({
         label: taller,
         data: this.barChartLabels.map(label => {
           const [comentario, calificacionStr] = label.split(' - ');
-          const calificacion = parseFloat(calificacionStr); // Convertir calificación a número
+          const calificacion = parseFloat(calificacionStr); 
           const dato = data.find(item => item.nombre_taller === taller && item.descripcion === comentario && item.promediocalificacion === calificacion);
           return dato ? dato.promediocalificacion : 0;
         }),

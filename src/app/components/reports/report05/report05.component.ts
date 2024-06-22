@@ -20,13 +20,6 @@ export class Report05Component implements OnInit {
 
   barChartType: ChartType = 'pie';
  
-  //barChartType: ChartType = 'doughnut';
- 
-  //barChartType: ChartType = 'line';
- 
-  //barChartType: ChartType = 'bar';
- 
-  //barChartType: ChartType = 'polarArea';
   barChartLegend = true;
   barChartData: ChartDataset[] = [];
  

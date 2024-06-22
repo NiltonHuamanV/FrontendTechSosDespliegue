@@ -3,36 +3,11 @@
       <h1 class ="title"> Lista de Marcas</h1>
     </div>
 
-      <!--
-      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
-
-
-          <ng-container matColumnDef="codigo">
-            <th mat-header-cell *matHeaderCellDef> Codigo </th>
-            <td mat-cell *matCellDef="let element"> {{element.idMarca}} </td>
-          </ng-container>
-
-
-          <ng-container matColumnDef="marca">
-            <th mat-header-cell *matHeaderCellDef> Marca </th>
-            <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
-          </ng-container>
-
-
-
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>-->
-
-
-        <!-- listarmarca.component.html -->
 <div class="card-grid">
 <mat-card *ngFor="let marca of marcas">
   <mat-card-header>
     <mat-icon>smartphone</mat-icon>
     <mat-card-title>{{ marca.idmarca }} - {{ marca.nombre }}</mat-card-title>
-    <!--mat-card-title>{{ marca.nombre }}</!--mat-card-title-->
   </mat-card-header>
   <mat-card-content>
     <p>

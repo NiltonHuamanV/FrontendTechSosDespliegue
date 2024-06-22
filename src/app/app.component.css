@@ -15,18 +15,16 @@
   }
   
   .district-button {
-    margin-left: 100px; /* Ajusta el margen entre los botones según sea necesario */
+    margin-left: 100px; 
   }
   
-  /* Media query para pantallas pequeñas */
-/* Media query para pantallas pequeñas */
 @media screen and (max-width: 600px) {
     .techsos-button {
-      margin-right: auto; /* Mueve el botón TechSos a la izquierda */
+      margin-right: auto; 
     }
   
     .district-button {
-      margin-left: 20px; /* Ajusta el margen entre los botones en pantallas pequeñas */
+      margin-left: 20px; 
     }
   }
   

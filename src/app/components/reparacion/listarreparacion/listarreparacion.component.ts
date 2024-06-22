@@ -71,7 +71,7 @@ export class ListarreparacionComponent implements OnInit{
       },
       (error) => {
         this.snackBar.open('No fue posible eliminar el registro', 'Cerrar', {
-          duration: 3000 // Duración del mensaje en milisegundos
+          duration: 3000 
         });
       }
     );

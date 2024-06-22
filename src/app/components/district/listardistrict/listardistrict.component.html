@@ -4,13 +4,11 @@
     </div>
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-          <!-- Position Column -->
           <ng-container matColumnDef="codigo">
             <th mat-header-cell *matHeaderCellDef> Codigo. </th>
             <td mat-cell *matCellDef="let element"> {{element.idDistrict}} </td>
           </ng-container>
 
-          <!-- Name Column -->
           <ng-container matColumnDef="distrito">
             <th mat-header-cell *matHeaderCellDef> Distrito </th>
             <td mat-cell *matCellDef="let element"> {{element.name}} </td>
